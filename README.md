@@ -4,17 +4,6 @@ Alloy syntax highlighting for the "listings package" (Latex) (It follows MIT's A
 
 Based on this  [gist](https://gist.github.com/timvdalen/3796300)
 
-## Preview
-
-<img src="screen.png" alt="preview" width="600">
-
-
-## Known Issues
-
-There are some problems with the `=>` symbol.
-Just use `implies` instead.
-
-
 ## Installation
 Dowload the _.sty_ file you find in this repo.
 
