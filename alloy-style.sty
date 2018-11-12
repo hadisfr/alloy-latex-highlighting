@@ -12,6 +12,13 @@
     #1%
   \fi
 }
+\lst@AddToHook{OutputOther}{\ProcessOther@silmeth}
+\newcommand\ProcessOther@silmeth
+{%
+  \ifnum\lst@mode=\lst@Pmode%     % If we're in `Processing' mode...
+    \def\lst@thestyle{\operatorstyle}%  % ... redefine the style locally
+  \fi%
+}
 \lstdefinelanguage{alloy}{
   keywords={
       assert, pred, all, no, lone, one, some, check, run,
@@ -20,6 +27,7 @@
       extends, open, none, univ, iden, seq,
       for, as, sum,
   },
+  alsoletter=0123456789,
   literate=%
     {0}{{{\ProcessDigit{0}}}}1
     {1}{{{\ProcessDigit{1}}}}1
@@ -31,35 +39,6 @@
     {7}{{{\ProcessDigit{7}}}}1
     {8}{{{\ProcessDigit{8}}}}1
     {9}{{{\ProcessDigit{9}}}}1
-    {->}{{{\operatorstyle{->}}}}2
-    {=>}{{{\operatorstyle{=>}}}}2
-    {<-}{{{\operatorstyle{<-}}}}2
-    {<=}{{{\operatorstyle{<=}}}}2
-    {==}{{{\operatorstyle{==}}}}2
-    {<:}{{{\operatorstyle{<:}}}}2
-    {:>}{{{\operatorstyle{:>}}}}2
-    {&&}{{{\operatorstyle{\&\&}}}}2
-    {||}{{{\operatorstyle{||}}}}2
-    {<=}{{{\operatorstyle{<=}}}}2
-    {>=}{{{\operatorstyle{>=}}}}2
-    {:}{{{\operatorstyle{:}}}}1
-    {>}{{{\operatorstyle{>}}}}1
-    {<}{{{\operatorstyle{<}}}}1
-    {|}{{{\operatorstyle{|}}}}1
-    {!}{{{\operatorstyle{!=}}}}1
-    {+}{{{\operatorstyle{+}}}}1
-    {-}{{{\operatorstyle{-}}}}1
-    {.}{{{\operatorstyle{.}}}}1
-    {:}{{{\operatorstyle{:}}}}1
-    {~}{{{\operatorstyle{\textasciitilde}}}}1
-    {^}{{{\operatorstyle{\textasciicircum}}}}1
-    {=}{{{\operatorstyle{=}}}}1
-    {[}{{{\operatorstyle{[}}}}1
-    {]}{{{\operatorstyle{]}}}}1
-    {\{}{{{\operatorstyle{\{}}}}1
-    {\}}{{{\operatorstyle{\}}}}}1
-    {)}{{{\operatorstyle{)}}}}1
-    {(}{{{\operatorstyle{(}}}}1
     ,
   sensitive=true,  % case sensitive
   morecomment=[l]//,
